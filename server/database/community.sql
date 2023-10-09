@@ -4,7 +4,7 @@ DROP TabLE IF EXISTS History;
 
 CREATE TABLE Event (
     event_id INT GENERATED ALWAYS AS IDENTITY, 
-    event-name VARCHAR(100) NOT NULL,
+    event_name VARCHAR(100) NOT NULL,
     description VARCHAR(255) NOT NULL,
     category VARCHAR(255) NOT NULL,
     point INT NOT NULL,
