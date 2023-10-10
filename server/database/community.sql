@@ -30,6 +30,7 @@ CREATE TABLE Volunteer (
     surname VARCHAR(100) NOT NULL,
     history_id INT NOT NULL,
     email_address VARCHAR(100) NOT NULL,
+    password CHAR(60) UNIQUE NOT NULL,
     contact_number VARCHAR(20) NOT NULL,
     address VARCHAR(255) NOT NULL,
     post_code VARCHAR(20) NOT NULL,
@@ -70,13 +71,13 @@ VALUES
     (5);
 
     -- Inserting data into Volunteer table
-INSERT INTO Volunteer (firstname, surname, history_id, email_address, contact_number, address, post_code)
+INSERT INTO Volunteer (firstname, surname, history_id, email_address, password, contact_number, address, post_code)
 VALUES
-    ('John', 'Doe', 1, 'john.doe@example.com', '+442012345678', '123 Main Street', 'SW1A 1AA'),
-    ('Jane', 'Smith', 2, 'jane.smith@example.com', '+442098765432', '456 Elm Avenue', 'WC1X 8QT'),
-    ('Robert', 'Johnson', 3, 'robert.johnson@example.com', '+442055551234', '789 Oak Road', 'SE1 7PB'),
-    ('Emily', 'Brown', 4, 'emily.brown@example.com', '+442088889876', '321 Pine Lane', 'E1 6AN'),
-    ('Michael', 'Wilson', 5, 'michael.wilson@example.com', '+442044445678', '567 Birch Street', 'W1A 1AB');
+    ('John', 'Doe', 1, 'john.doe@example.com', '123', '+442012345678', '123 Main Street', 'SW1A 1AA'),
+    ('Jane', 'Smith', 2, 'jane.smith@example.com', '234', '+442098765432', '456 Elm Avenue', 'WC1X 8QT'),
+    ('Robert', 'Johnson', 3, 'robert.johnson@example.com', '345', '+442055551234', '789 Oak Road', 'SE1 7PB'),
+    ('Emily', 'Brown', 4, 'emily.brown@example.com', '456', '+442088889876', '321 Pine Lane', 'E1 6AN'),
+    ('Michael', 'Wilson', 5, 'michael.wilson@example.com', '567','+442044445678', '567 Birch Street', 'W1A 1AB');
 
 
 
