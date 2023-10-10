@@ -54,6 +54,7 @@ class Volunteer {
 
     const newVolunteerId = response.rows[0].volunteer_id;
     const newVolunteer = await Volunteer.getByVolunteerId(newVolunteerId);
+    return newVolunteer;
   }
 
   async update() {
@@ -76,7 +77,7 @@ class Volunteer {
     await db.query("DELETE FROM Volunteer WHERE volunteer_id = $1;", [
       this.volunteer_id,
     ]);
-    // return new Volunteer(response.rows[0]);
+    return new Volunteer(response.rows[0]);
   }
 }
 module.exports = Volunteer;
