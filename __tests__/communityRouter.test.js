@@ -1,11 +1,9 @@
 const request = require("supertest");
-const app = require("../app"); // Adjust the path based on your project structure
-const db = require("../database/connect"); // Import your database connection module
+const app = require("../server/app");
+const db = require("../server/database/connect");
 
-// Import your Event model for creating and retrieving data
-const Event = require("../models/Community");
+const Event = require("../server/models/Community");
 
-// Create a describe block for your communityRouter tests
 describe("Community Router Tests", () => {
   // This will hold the ID of the event created for testing
   let testEventId;
