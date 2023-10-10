@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Takes up the full viewport height */
+}
+
+.progress-circle {
+    position: relative;
+}
+
+.progress-bg {
+    stroke: #eee; /* Background circle color */
+    stroke-width: 4; /* Width of the stroke */
+    fill: none; /* Makes the circle hollow */
+}
+
+.progress-bar {
+    stroke: blue; /* Progress circle color */
+    stroke-width: 4; /* Width of the stroke */
+    stroke-linecap: round; /* Makes the end of the stroke rounded */
+    fill: none;
+}
+
+.progress-text {
+    font-size: 1em;
+    text-anchor: middle; /* Aligns the text horizontally */
+}
