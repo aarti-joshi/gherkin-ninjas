@@ -33,6 +33,13 @@ CREATE TABLE Volunteer (
     FOREIGN KEY (history_id) REFERENCES History(history_id)
 );
 
+CREATE TABLE token(
+    token_id INT GENERATED ALWAYS AS IDENTITY,
+    volunteer_id INT NOT NULL,
+    token VARCHAR(36) UNIQUE NOT NULL,
+    PRIMARY KEY (token_id),
+    FOREIGN KEY (volunteer_id) REFERENCES Volunteer("volunteer_id")
+);
 
 INSERT INTO Event (event_date, event_name, description, category, point)
 VALUES
