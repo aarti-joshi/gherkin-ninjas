@@ -7,7 +7,9 @@
     "dev": "nodemon ./server/index.js",
     "setup-db": "node ./server/database/setup.js",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "start": "node ./server/index.js",
+    "dev2": "live-server"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,7 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "jest": "^29.7.0",
+    "live-server": "^1.2.2",
     "nodemon": "^3.0.1",
     "supertest": "^6.3.3"
   },

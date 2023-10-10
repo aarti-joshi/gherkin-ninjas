@@ -24,10 +24,10 @@ describe("Community Router Tests", () => {
   });
 
   // After running the tests, clean up the test event from the database
-  afterAll(async () => {
-    // Delete the test event from the database
-    await Event.getByEventId(testEventId).destroy();
-  });
+  //   afterAll(async () => {
+  //     // Delete the test event from the database
+  //     await Event.getByEventId(testEventId).destroy();
+  //   });
 
   // Test the GET /CommunityAsync route
   describe("GET /CommunityAsync", () => {
