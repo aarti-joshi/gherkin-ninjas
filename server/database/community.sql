@@ -32,7 +32,7 @@ CREATE TABLE Volunteer (
     email_address VARCHAR(100) NOT NULL,
     contact_number VARCHAR(20) NOT NULL,
     address VARCHAR(255) NOT NULL,
-    post_code VARCHAR(20) NOT NULL,
+    postcode VARCHAR(20) NOT NULL,
     PRIMARY KEY (volunteer_id),
     FOREIGN KEY (history_id) REFERENCES History(history_id)
 );
@@ -70,7 +70,7 @@ VALUES
     (5);
 
     -- Inserting data into Volunteer table
-INSERT INTO Volunteer (firstname, surname, history_id, email_address, contact_number, address, post_code)
+INSERT INTO Volunteer (firstname, surname, history_id, email_address, contact_number, address, postcode)
 VALUES
     ('John', 'Doe', 1, 'john.doe@example.com', '+442012345678', '123 Main Street', 'SW1A 1AA'),
     ('Jane', 'Smith', 2, 'jane.smith@example.com', '+442098765432', '456 Elm Avenue', 'WC1X 8QT'),
@@ -78,6 +78,14 @@ VALUES
     ('Emily', 'Brown', 4, 'emily.brown@example.com', '+442088889876', '321 Pine Lane', 'E1 6AN'),
     ('Michael', 'Wilson', 5, 'michael.wilson@example.com', '+442044445678', '567 Birch Street', 'W1A 1AB');
 
+
+-- INSERT INTO Volunteer (firstname, surname, email_address, contact_number, address, postcode)
+-- VALUES
+--     ('John', 'Doe', 'john.doe@example.com', '+442012345678', '123 Main Street', 'SW1A 1AA'),
+--     ('Jane', 'Smith', 'jane.smith@example.com', '+442098765432', '456 Elm Avenue', 'WC1X 8QT'),
+--     ('Robert', 'Johnson', 'robert.johnson@example.com', '+442055551234', '789 Oak Road', 'SE1 7PB'),
+--     ('Emily', 'Brown', 'emily.brown@example.com', '+442088889876', '321 Pine Lane', 'E1 6AN'),
+--     ('Michael', 'Wilson', 'michael.wilson@example.com', '+442044445678', '567 Birch Street', 'W1A 1AB');
 
 
 

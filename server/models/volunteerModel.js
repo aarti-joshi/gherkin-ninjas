@@ -1,15 +1,15 @@
 const db = require("../database/connect");
 
 class Volunteer {
-  constructor(Volunteer) {
-    this.volunteer_id = Volunteer.volunteer_id;
-    this.firstname = Volunteer.firstname;
-    this.surname = Volunteer.surname;
-    this.history_id = Volunteer.history_id;
-    this.email_address = Volunteer.email_address;
-    this.contact_number = Volunteer.contact_number;
-    this.address = Volunteer.address;
-    this.postcode = Volunteer.postcode;
+  constructor(volunteer) {
+    this.volunteer_id = volunteer.volunteer_id;
+    this.firstname = volunteer.firstname;
+    this.surname = volunteer.surname;
+    this.history_id = volunteer.history_id;
+    this.email_address = volunteer.email_address;
+    this.contact_number = volunteer.contact_number;
+    this.address = volunteer.address;
+    this.postcode = volunteer.postcode;
   }
 
   static async getAll() {
@@ -28,6 +28,55 @@ class Volunteer {
     }
     return new Volunteer(response.rows[0]);
   }
-}
 
+  static async create(data) {
+    const {
+      firstname,
+      surname,
+      history_id,
+      email_address,
+      contact_number,
+      address,
+      postcode,
+    } = data;
+    const response = await db.query(
+      "INSERT INTO Volunteer (firstname, surname, history_id, email_address, contact_number, address, postcode) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *;",
+      [
+        firstname,
+        surname,
+        history_id,
+        email_address,
+        contact_number,
+        address,
+        postcode,
+      ]
+    );
+
+    const newVolunteerId = response.rows[0].volunteer_id;
+    const newVolunteer = await Volunteer.getByVolunteerId(newVolunteerId);
+  }
+
+  async update() {
+    const response = await db.query(
+      "UPDATE Volunteer SET firstname = $1, surname = $2, history_id = $3, email_address = $4, contact_number = $5, address = $6, postcode = $7 WHERE volunteer_id = $8 RETURNING *;",
+      [
+        this.firstname,
+        this.surname,
+        this.history_id,
+        this.email_address,
+        this.contact_number,
+        this.address,
+        this.postcode,
+        this.volunteer_id,
+      ]
+    );
+    return new Volunteer(response.rows[0]);
+  }
+  async destroy() {
+    await db.query("DELETE FROM Volunteer WHERE volunteer_id = $1;", [
+      this.volunteer_id,
+    ]);
+    // return new Volunteer(response.rows[0]);
+  }
+}
 module.exports = Volunteer;
