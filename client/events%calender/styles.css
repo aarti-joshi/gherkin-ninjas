@@ -1,4 +1,3 @@
-/* Container to hold everything */
 .container {
     display: flex;
     flex-direction: column;
@@ -6,38 +5,28 @@
     margin: 20px;
     border: 3px solid red;
 }
-
-/* Header to hold navigation and month display */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 300px;
+    width: 100%;
     border: 2px solid blue;
 }
-
-/* Buttons for navigating months */
 .navigation {
     cursor: pointer;
     padding: 10px 20px;
     border: 1px solid green;
 }
-
-/* Month display */
 #month {
     font-size: 24px;
     border: 1px solid purple;
 }
-
-/* Calendar grid */
 #calendar {
     display: flex;
     flex-wrap: wrap;
     width: 300px;
     border: 3px solid orange;
 }
-
-/* Individual day boxes */
 .day-box {
     width: 30px;
     height: 30px;
@@ -45,4 +34,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+/* Highlight days with events */
+.day-box.event {
+    background-color: #ffcccb;
+}
+/* Event details sidebar at the bottom */
+.event-details {
+    margin-top: 20px;
+    width: 300px;
+    border: 2px solid gray;
+    text-align: center;
 }
