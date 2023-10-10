@@ -5,8 +5,8 @@ class Volunteer {
     this.volunteer_id = volunteer.volunteer_id;
     this.firstname = volunteer.firstname;
     this.surname = volunteer.surname;
-    this.history_id = volunteer.history_id;
     this.email_address = volunteer.email_address;
+    this.password = volunteer.password;
     this.contact_number = volunteer.contact_number;
     this.address = volunteer.address;
     this.postcode = volunteer.postcode;
@@ -33,19 +33,19 @@ class Volunteer {
     const {
       firstname,
       surname,
-      history_id,
       email_address,
+      password,
       contact_number,
       address,
       postcode,
     } = data;
     const response = await db.query(
-      "INSERT INTO Volunteer (firstname, surname, history_id, email_address, contact_number, address, postcode) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *;",
+      "INSERT INTO Volunteer (firstname, surname, email_address, password, contact_number, address, postcode) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *;",
       [
         firstname,
         surname,
-        history_id,
         email_address,
+        password,
         contact_number,
         address,
         postcode,
@@ -59,12 +59,12 @@ class Volunteer {
 
   async update() {
     const response = await db.query(
-      "UPDATE Volunteer SET firstname = $1, surname = $2, history_id = $3, email_address = $4, contact_number = $5, address = $6, postcode = $7 WHERE volunteer_id = $8 RETURNING *;",
+      "UPDATE Volunteer SET firstname = $1, surname = $2, email_address = $3, password = $4, contact_number = $5, address = $6, postcode = $7 WHERE volunteer_id = $8 RETURNING *;",
       [
         this.firstname,
         this.surname,
-        this.history_id,
         this.email_address,
+        this.password,
         this.contact_number,
         this.address,
         this.postcode,
