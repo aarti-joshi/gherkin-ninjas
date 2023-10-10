@@ -3,7 +3,7 @@ const Event = require('../models/Community');
 async function index(req, res) {
     try {
         const events = await Event.getAll();
-        res.status(200).send(events);
+        res.json(events);
     }
     catch (err) {
         res.status(500).send({error: err.message})
@@ -12,12 +12,12 @@ async function index(req, res) {
 
 async function show(req, res) {
     try {
-        let name = req.params.name;
-        const event = await Event.getByEventName(name);
-        res.status(200).send(event);
+        const id = parseInt(req.params.event_id);
+        const event = await Event.getByEventId(id);
+        res.json(event);
     } 
     catch (err) {
-    res.status(500).send({error: err.message})
+    res.status(404).send({error: err.message})
     }
 };
 
