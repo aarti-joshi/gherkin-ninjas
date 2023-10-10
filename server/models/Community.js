@@ -19,14 +19,16 @@ class Event {
     }
 
     return response.rows.map((E) => new Event(E));
-  };
+  }
 
   //GET AN EVENT BY ITS ID:
   static async getByEventId(event_id) {
-    const response = await db.query( "SELECT * FROM Event WHERE event_id = $1", [event_id]);
+    const response = await db.query("SELECT * FROM Event WHERE event_id = $1", [
+      event_id,
+    ]);
 
     if (response.rows.length != 1) {
-      throw new Error("Unable to find event");
+      throw new Error("Event not found");
     }
     return new Event(response.rows[0]);
   }
@@ -44,23 +46,29 @@ class Event {
   }
 
   // UPDATE AN EVENT
-  async update(){
+  async update() {
     const response = await db.query(
       "UPDATE Event SET event_name = $1, event_date = $2, description = $3, category = $4, point = $5 WHERE event_id = $6 RETURNING *;",
-      [this.event_name, this.event_date, this.description, this.category, this.point, this.event_id]
+      [
+        this.event_name,
+        this.event_date,
+        this.description,
+        this.category,
+        this.point,
+        this.event_id,
+      ]
     );
     return new Event(response.rows[0]);
   }
 
   // DELETE AN EVENT
-  async destroy(){
+  async destroy() {
     const response = await db.query(
       "DELETE FROM Event WHERE event_id = $1 RETURNING *;",
       [this.event_id]
     );
     return new Event(response.rows[0]);
   }
-  
 }
 
 module.exports = Event;
