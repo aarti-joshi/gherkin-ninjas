@@ -21,7 +21,7 @@ class Event {
     return response.rows.map((E) => new Event(E));
   };
 
-  //GET AN EVENT BY ITS NAME:
+  //GET AN EVENT BY ITS ID:
   static async getByEventId(event_id) {
     const response = await db.query( "SELECT * FROM Event WHERE event_id = $1", [event_id]);
 
@@ -31,16 +31,36 @@ class Event {
     return new Event(response.rows[0]);
   }
 
-//   // CREATE A NEW EVENT - ADMIN USERS ONLY:
-//   static async create(data) {
-//     const { event_name, event_date, description, category, point } = data;
-//     const response = await db.query(
-//       "INSERT INTO Event (event_name, event_date, description, category, point) VALUES ($1, $2, $3, $4) RETURNING *;",
-//       [event_name, event_date, description, category, point]
-//     );
-//     console.log(response.rows[0]);
-//     return new Event(response.rows[0]);
-//   }
+  // CREATE A NEW EVENT - ADMIN USERS ONLY:
+  static async create(data) {
+    const { event_name, event_date, description, category, point } = data;
+    const response = await db.query(
+      "INSERT INTO Event (event_name, event_date, description, category, point) VALUES ($1, $2, $3, $4, $5) RETURNING *;",
+      [event_name, event_date, description, category, point]
+    );
+    const newEventId = response.rows[0].event_id;
+    const newEvent = await Event.getByEventId(newEventId);
+    return newEvent;
+  }
+
+  // UPDATE AN EVENT
+  async update(){
+    const response = await db.query(
+      "UPDATE Event SET event_name = $1, event_date = $2, description = $3, category = $4, point = $5 WHERE event_id = $6 RETURNING *;",
+      [this.event_name, this.event_date, this.description, this.category, this.point, this.event_id]
+    );
+    return new Event(response.rows[0]);
+  }
+
+  // DELETE AN EVENT
+  async destroy(){
+    const response = await db.query(
+      "DELETE FROM Event WHERE event_id = $1 RETURNING *;",
+      [this.event_id]
+    );
+    return new Event(response.rows[0]);
+  }
+  
 }
 
 module.exports = Event;

@@ -38,7 +38,7 @@ CREATE TABLE token(
     volunteer_id INT NOT NULL,
     token VARCHAR(36) UNIQUE NOT NULL,
     PRIMARY KEY (token_id),
-    FOREIGN KEY (volunteer_id) REFERENCES Volunteer("volunteer_id")
+    FOREIGN KEY (volunteer_id) REFERENCES Volunteer(volunteer_id)
 );
 
 INSERT INTO Event (event_date, event_name, description, category, point)
