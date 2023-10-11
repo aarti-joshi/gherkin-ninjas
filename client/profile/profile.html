@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../homepage/homepage.html"><img src="../assets/Async-log.png" alt="Community Async logo" /></a>
+        </div>
+        <nav class="menu">
+            <button class="profile-btn" aria-label="Profile"><a href="#">&#128100;</a></button>
+            <button class="hamburger-btn" aria-label="Menu" onclick="toggleDropdown()">&#8801;</button>
+            <div class="dropdown-content" id="dropdown">
+                <a href="../eventCalender/events.html">&#128197; Events & Calendar</a>
+                <a href="../history/history.html">&#x23F3; History</a>
+                <a href="../rewards&points/Rewards.html">&#x1F3C6; Rewards</a>
+                <a href="../signup/login.js">&#x1f6aa; Logout</a>
+            </div>
+        </nav>
+    </header>
+    <!-- Search -->
+    <section class="search-bar">
+        <input type="search" class="search" placeholder=" search events ..." />
+    </section>
+    <!-- Content -->
+    <main>
+        <div class="profile-info">
+            <h2>Profile Information</h2>
+            <p><strong>Name:</strong> <span id="displayName">Current Name</span></p>
+            <p><strong>Username:</strong> <span id="displayUsername">Current Username</span></p>
+            <p><strong>Email:</strong> <span id="displayEmail">current@email.com</span></p>
+        </div>
+        <div class="edit-profile">
+            <h2>Edit Profile</h2>
+            <form id="editProfileForm">
+                <label for="newName">Name:</label>
+                <input type="text" id="newName" name="newName" placeholder="New Name"><br>
+                
+                <label for="newUsername">Username:</label>
+                <input type="text" id="newUsername" name="newUsername" placeholder="New Username"><br>
+                
+                <label for="newEmail">Email:</label>
+                <input type="email" id="newEmail" name="newEmail" placeholder="New Email"><br>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password" required><br>
+                
+                <input type="submit" value="Update Profile">
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2023 Community Async. All rights reserved.</p>
+        <p><a href="#">Cookies</a> | <a href="#">About Us </a> | <a href="#">Privacy Policy </a></p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script src="../dropdowntoggle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="#"><img src="../assets/Async-log.png" alt="Community Async logo" /></a>
+        </div>
+        <nav class="menu">
+            <button class="profile-btn" aria-label="Profile"><a href="../profile/profile.html">&#128100;</a></button>
+            <button class="hamburger-btn" aria-label="Menu" onclick="toggleDropdown()">&#8801;</button>
+            <div class="dropdown-content" id="dropdown">
+                <a href="../eventCalender/eventCalender.html">&#128197; Events & Calendar</a>
+                <a href="../history/history.html">&#x23F3; History</a>
+                <a href="../rewards&points/Rewards.html">&#x1F3C6; Rewards</a>
+                <a href="../signup/login.js">&#x1f6aa; Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search -->
+    <section class="search-bar">
+        <input type="search" class="search" placeholder=" search events ..." />
+    </section>
+
+    <!-- Content -->
+    <main>
+        <div class="welcome-message">
+            <h1>Welcome to Community Async</h1>
+            <p>Your home for everything community-related.</p>
+        </div>
+
+        <div class="main-content">
+            <div class="progress-container">
+                <svg class="progress-circle" width="200" height="200">
+                    <circle class="progress-bg" cx="100" cy="100" r="80"></circle>
+                    <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                    <text class="progress-text" x="100" y="105"></text>
+                </svg>
+            </div>
+
+            <div class="upcoming-events">
+                <div class="event-card">
+                    <h2>Event Name</h2>
+                    <p>Event Date and Time</p>
+                    <p>Event Description</p>
+                    <button class="tick-button">&#10003; Register</button>
+                </div>
+                <div class="event-card">
+                    <h2>Event Name</h2>
+                    <p>Event Date and Time</p>
+                    <p>Event Description</p>
+                    <button class="tick-button">&#10003; Register</button>
+                </div>
+                <div class="event-card">
+                    <h2>Event Name</h2>
+                    <p>Event Date and Time</p>
+                    <p>Event Description</p>
+                    <button class="tick-button">&#10003; Register</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2023 Community Async. All rights reserved.</p>
+        <p><a href="#">Cookies</a> | <a href="#">About Us </a> | <a href="#">Privacy Policy </a></p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script src="../dropdowntoggle.js"></script>
+</body>
+
+</html>
