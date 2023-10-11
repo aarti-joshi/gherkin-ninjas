@@ -1,3 +1,4 @@
+/* base structure of pages */
 body {
     display: flex;
     flex-direction: column;
@@ -18,7 +19,7 @@ main {
 }
 
 main img {
-    width: 150px; /* Adjust according to your needs */
+    width: 150px;
     height: auto;
 }
 
@@ -122,6 +123,6 @@ a:visited {
     }
     
     main img {
-        width: 50%; /* Adjust according to your needs on mobile */
+        width: 50%;
     }
 }
