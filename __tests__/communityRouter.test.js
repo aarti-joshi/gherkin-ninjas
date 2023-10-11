@@ -8,27 +8,6 @@ describe("Community Router Tests", () => {
   // This will hold the ID of the event created for testing
   let testEventId;
 
-  // Before running the tests, create an event for testing purposes
-  beforeAll(async () => {
-    // Create an event in the database and store its ID for testing
-    const eventData = {
-      event_date: "2023-12-31",
-      event_name: "Test Event",
-      description: "This is a test event.",
-      category: "Test Category",
-      point: 50,
-    };
-
-    const newEvent = await Event.create(eventData);
-    testEventId = newEvent.event_id;
-  });
-
-  // After running the tests, clean up the test event from the database
-  //   afterAll(async () => {
-  //     // Delete the test event from the database
-  //     await Event.getByEventId(testEventId).destroy();
-  //   });
-
   // Test the GET /CommunityAsync route
   describe("GET /CommunityAsync", () => {
     it("should respond with a list of events", async () => {

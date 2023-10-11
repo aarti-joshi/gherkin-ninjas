@@ -10,18 +10,18 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            username: form.get("username"),
+            email_address: form.get("email_address"),
             password: form.get("password")
         })
     }
 
-    // const response = await fetch("", options);
-    // const data = await response.json();
+    const response = await fetch("http://localhost:3000/Volunteers/login", options);
+    const data = await response.json();
 
-    // if (response.status == 200) {
-    //     localStorage.setItem("token", data.token);
-    //     window.location.assign("");
-    // } else {
-    //     alert(data.error);
-    // }
+    if (response.status == 200) {
+        localStorage.setItem("token", data.token);
+        window.location.assign("homepage.html");
+    } else {
+        alert(data.error);
+    }
 });

@@ -45,7 +45,7 @@ function updateProgress(points, nextGoal) {
   
     // Update text
     progressText.textContent = `${points} / ${nextGoal}`;
-  }
+}
   
 
 // Test the function

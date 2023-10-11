@@ -29,6 +29,18 @@ class Volunteer {
     return new Volunteer(response.rows[0]);
   }
 
+  static async getByEmail(email_address) {
+    const response = await db.query(
+      "SELECT * FROM Volunteer WHERE email_address = $1",
+      [email_address]
+    );
+
+    if (response.rows.length != 1) {
+      throw new Error("Volunteer not found");
+    }
+    return new Volunteer(response.rows[0]);
+  }
+
   static async create(data) {
     const {
       firstname,
