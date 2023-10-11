@@ -1,48 +1,200 @@
+/* base structure of pages */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #DEE6EC;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 15%;
+    height: 8vh;
+    background-color: #14406A;
+    color: white;
+}
+
+.logo img {
+    width: 15vw;
+    height: auto;
+}
+
+.menu button {
+    min-width: 50px;
+    max-width: 100px;
+    width: 10vw;  
+    height: auto;
+    padding: 0.5rem;
+    background-color: #14406A;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    background-color: #14406A;
+    padding: 5px;
+}
+
+.search {
+    width: 75vw;
+    border-radius: 8rem;
+    padding: 0.5rem;
+}
+
+.footer {
+    background-color: #14406A;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    height: 10vh;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #BDE0FE;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #E4C3CF;
+}
+
+/* Buttons: hover effect */
+.profile-btn:hover,
+.hamburger-btn:hover,
+.profile-btn:focus,
+.hamburger-btn:focus {
+    background-color: #E4C3CF;
+}
+
+a,
+a:visited {
+    color: inherit;
+    text-decoration: #DEE6EC;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .logo img {
+        width: 50vw;
+    }
+
+    .menu button {
+        width: 40vw;
+    }
+    
+}
+
+/* calender */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px;
-    border: 3px solid red;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px grey; 
 }
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    border: 2px solid blue;
+    margin-bottom: 10px;
 }
+
 .navigation {
     cursor: pointer;
     padding: 10px 20px;
-    border: 1px solid green;
+    background-color: #14406A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
+
+.navigation:hover {
+    background-color: #DEE6EC;
+    color: #14406A;
+}
+
 #month {
     font-size: 24px;
-    border: 1px solid purple;
+    font-weight: bold;
 }
+
 #calendar {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     width: 300px;
-    border: 3px solid orange;
 }
+
 .day-box {
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
+    width: 40px; /* increased box size for better visibility */
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 2px;
+    background-color: #DEE6EC;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
+
 /* Highlight days with events */
 .day-box.event {
-    background-color: #ffcccb;
+    background-color: #E4C3CF;
+    cursor: pointer;
 }
+
+.day-box.event:hover {
+    background-color: #C2A9AC;
+}
+
 /* Event details sidebar at the bottom */
 .event-details {
     margin-top: 20px;
     width: 300px;
-    border: 2px solid gray;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px pink;
     text-align: center;
 }

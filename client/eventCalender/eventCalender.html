@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>Events Calendar</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -18,7 +18,7 @@
             <button class="profile-btn" aria-label="Profile"><a href="../profile/profile.html">&#128100;</a></button>
             <button class="hamburger-btn" aria-label="Menu" onclick="toggleDropdown()">&#8801;</button>
             <div class="dropdown-content" id="dropdown">
-                <a href="#">&#128197; Events & Calendar</a>
+                <a href="../eventCalender/eventCalender.html">&#128197; Events & Calendar</a>
                 <a href="../history/history.html">&#x23F3; History</a>
                 <a href="../rewards&points/Rewards.html">&#x1F3C6; Rewards</a>
                 <a href="../signup/login.js">&#x1f6aa; Logout</a>
@@ -31,15 +31,27 @@
     </section>
     <!-- Content -->
     <main>
-        <h2>About Us</h2>
-        <img src="../assets/westminster-logo.png" alt="Westminster Logo" width="150">
-        <p>We are a community of Async enthusiasts who come together to share our love for this unique vegetable. Our council is dedicated to promoting the benefits of Async and educating the public on their many uses.</p>
+        <div class="container">
+            <div class="header">
+                <button class="navigation" onclick="prevMonth()">&lt;</button>
+                <h1 id="month"></h1>
+                <button class="navigation" onclick="nextMonth()">&gt;</button>
+            </div>
+            <div id="calendar"></div>
+            <!-- Event details sidebar at the bottom -->
+            <div id="eventDetails" class="event-details">
+                <h2>Event Details</h2>
+                <p id="eventInfo"></p>
+            </div>
+        </div>
     </main>
+
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2023 Community Async. All rights reserved.</p>
         <p><a href="#">Cookies</a> | <a href="#">About Us </a> | <a href="#">Privacy Policy </a></p>
     </footer>
+    <script src="calender.js"></script>
     <script src="../dropdowntoggle.js"></script>
 </body>
 

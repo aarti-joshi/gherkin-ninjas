@@ -1,121 +1,152 @@
-* {
-    padding: 0;
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
     background-color: #DEE6EC;
-  }
-  
-/* Navbar */
+}
+main {
+    flex-grow: 1; /* This pushes the footer to the bottom */
+}
+
 .navbar {
-    position: relative;
     display: flex;
-    justify-content: center;
-    gap: 15vw;
-    padding: 1rem;
-    height: 15vh;
+    justify-content: space-between;
+    padding: 1rem 15%;
+    height: 8vh;
+    background-color: #14406A;
+    color: white;
 }
-  
-.logo {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    height: 100%;
-    padding-left: 15%;
+
+.logo img {
+    width: 15vw;
+    height: auto;
 }
-  
-.menu {
-    display: flex;
-    align-content: space-between;
-    justify-content: center;
-    /* height: max-content; */
-    width: 100%;
-    height: 100%;
-    gap: 10px;
-    padding-right: 1.5%;
-    padding-top: 0.5%;
-    /* background-color: #14406A; */
-}
-  
-.profile-btn,
-.hamburger-btn {
+
+.menu button {
+    min-width: 50px;
+    max-width: 100px;
+    width: 10vw;
+    height: auto;
+    padding: 0.5rem;
     background-color: #14406A;
     color: white;
     font-size: 2rem;
-    /* padding: 0.5rem 1.5rem; */
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
 }
-.login-btn:hover {
-    background-color: #E4C3CF;
-}
-.signup-btn:hover {
-    background-color: #E4C3CF;
-}
-  
-/* search-bar */
+
 .search-bar {
     display: flex;
     justify-content: center;
     background-color: #14406A;
-    height: 7vh;
     padding: 5px;
 }
-  
+
 .search {
     width: 75vw;
     border-radius: 8rem;
     padding: 0.5rem;
 }
-  
-  /* Footer*/
+
 .footer {
-    position: static;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 15vh;
     background-color: #14406A;
     color: white;
     text-align: center;
-    padding: 2rem;
-}
-.footer p {
-    background-color: #14406A;
+    padding: 1rem;
+    height: 10vh;
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-    width: 70vw;
-    height: 70vh;
-    margin-left: 30vh;
-    background-color: red;
-    flex-direction: column;
-    margin-top: 1rem;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #BDE0FE;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
-.greetings {
-    background-color: #14406A;
-    width: 40%;
-    height: 15%;
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #E4C3CF;
+}
+
+.profile-btn:hover,
+.hamburger-btn:hover,
+.profile-btn:focus,
+.hamburger-btn:focus {
+    background-color: #E4C3CF;
+}
+
+a, a:visited {
+    color: inherit;
+    text-decoration: #DEE6EC;
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .logo img {
+        width: 50vw;
+    }
+
+    .menu button {
+        width: 40vw;
+    }
+}
+
+/* main  */
+
+.welcome-message {
     text-align: center;
-    padding-top: 1rem;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
 }
 
-.dashboard {
+.main-content {
     display: flex;
-    justify-content: space-evenly;
-    margin: 1rem;
-    height: 100%;
-    width:90%;
-    background-color: aqua;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px; 
 }
 
+.progress-container {
+    flex: 1; 
+}
 
+.upcoming-events {
+    flex: 2; 
+}
 
+.event-card {
+    width: 80%; 
+    margin: 0 auto;
+    background-color: #FFF;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
 
+.tick-button {
+    background-color: #14406A;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 .progress-container {
     display: flex;
@@ -124,19 +155,12 @@
     width: 100%;
     height: 100%;
     padding: 1.5rem;
-    /* height: 900px;  */
-}
-
-.upcoming-events {
-    width: 100%;      
-    height: 70%; 
-    background-color: blue;
-    border-radius: 20px;
 }
 
 .progress-circle {
     position: relative;
-    height: 100%;  
+    height: 100%;
+    transform: scale(2); /* Scaled cirle */
 }
 
 .progress-bg {
@@ -146,10 +170,12 @@
 }
 
 .progress-bar {
-    stroke: blue;
+    stroke: blue; 
     stroke-width: 4; 
     stroke-linecap: round;
     fill: none;
+    transform: rotate(-90deg); /* to start load at top */
+    transform-origin: 50% 50%;
 }
 
 .progress-text {
@@ -157,4 +183,8 @@
     text-anchor: middle;
 }
 
-
+@media only screen and (max-width: 600px) {
+    .progress-container, .upcoming-events {
+        max-width: 100%;
+    }
+}
