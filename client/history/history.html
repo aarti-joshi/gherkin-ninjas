@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Navbar -->
-    <div class="navbar">
+    <header class="navbar">
         <div class="logo">
-          <img src="../assets/Async-log.png" alt="Community Async logo" />
+            <a href="../index.html"><img src="../assets/Async-log.png" alt="Community Async logo" /></a>
         </div>
-        <div class="menu">
-          <button class="profile-btn">&#128100</button>
-          <button class="hamburger-btn">&#8801;</button>
-        </div>
-    </div>
+        <nav class="menu">
+            <button class="profile-btn" aria-label="Profile"><a href="../profile/profile.html">&#128100;</a></button>
+            <button class="hamburger-btn" aria-label="Menu" onclick="toggleDropdown()">&#8801;</button>
+            <div class="dropdown-content" id="dropdown">
+                <a href="../eventCalender/events.html">&#128197; Events & Calendar</a>
+                <a href="#">&#x23F3; History</a>
+                <a href="../rewards&points/Rewards.html">&#x1F3C6; Rewards</a>
+                <a href="../signup/login.js">&#x1f6aa; Logout</a>
+            </div>
+        </nav>
+    </header>
     <!-- Search -->
-    <div class="search-bar">
+    <section class="search-bar">
         <input type="search" class="search" placeholder=" search events ..." />
-    </div>
+    </section>
 
-    <div class="footer">
-        <p back>&copy; 2023 Community Async. All rights reserved.</p> 
-        <p><a href="#">Cookies</a> | <a href="#">About Us </a> |
-        <a href="#">Privacy Policy </a></p>
-    </div><script src="scripts.js"></script>
+    <!-- Content -->
+    <main>
+        <section class="events-section">
+            <h2>Attending</h2>
+            <div id="attending-events" class="event-cards">
+                <!-- js adds cards -->
+            </div>
+        </section>
+        <section class="events-section">
+            <h2>Attended</h2>
+            <div id="attended-events" class="event-cards">
+                <!-- js adds cards -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2023 Community Async. All rights reserved.</p>
+        <p><a href="#">Cookies</a> | <a href="#">About Us </a> | <a href="#">Privacy Policy </a></p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script src="../dropdowntoggle.js"></script>
 </body>
+
 </html>
