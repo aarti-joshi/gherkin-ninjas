@@ -20,7 +20,9 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
     if (response.status == 200) {
         localStorage.setItem("token", data.token);
-        window.location.assign("homepage.html");
+        // window.location.assign("./homepage/homepage.html");
+        // get the homepage from the hompage folder in the client folder
+        window.location.assign("../homepage/homepage.html");
     } else {
         alert(data.error);
     }
