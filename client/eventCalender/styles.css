@@ -16,7 +16,7 @@ main {
     text-align: center;
     padding: 20px;
     flex-grow: 1;
-    padding-left: 25vw;
+    /* padding-left: 25vw; */
 }
 
 
@@ -202,3 +202,11 @@ a:visited {
     text-align: center;
 }
 
+/* ... Existing CSS ... */
+
+@media only screen and (min-width: 1921px) {
+    main {
+        margin-left: 25vw;
+        margin-right: 25vw;
+    }
+}
