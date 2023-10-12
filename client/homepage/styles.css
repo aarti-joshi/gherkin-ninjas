@@ -168,13 +168,13 @@ a, a:visited {
 }
 
 .progress-bg {
-    stroke: #eee; 
+    stroke: #caaecd; 
     stroke-width: 4; 
     fill: none; 
 }
 
 .progress-bar {
-    stroke: rgba(0, 32, 241, 0.692); 
+    stroke: rgba(227, 2, 126, 0.692); 
     stroke-width: 4; 
     stroke-linecap: round;
     fill: none;

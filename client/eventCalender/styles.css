@@ -11,11 +11,12 @@ body {
 
 main {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: center;
     padding: 20px;
     flex-grow: 1;
+    padding-left: 25vw;
 }
 
 
@@ -121,15 +122,16 @@ a:visited {
 }
 
 /* calender */
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px;
-    padding: 15px;
+    padding: 30px;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0px 0px 15px grey; 
+    box-shadow: 0px 0px 15px grey; /* subtle shadow for the container */
 }
 
 .header {
@@ -162,9 +164,9 @@ a:visited {
 
 #calendar {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     width: 300px;
+    padding-left: 10%;
 }
 
 .day-box {
@@ -196,8 +198,7 @@ a:visited {
     padding: 10px;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0px 0px 15px pink;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
     text-align: center;
 }
-
 
