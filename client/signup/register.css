@@ -18,9 +18,9 @@ header {
 
 .logo {
     display: flex;
-    align-items: center; /* Vertically center if needed */
-    justify-content: space-between; /* Position items on opposite ends */
-    width: 85%; /* Make the logo container take full width */
+    align-items: center; 
+    justify-content: space-between; 
+    width: 85%; 
 }
 
 .logo img {
@@ -43,8 +43,8 @@ h1 {
     color: #ffffff;
     text-align: center;
     margin-bottom: 1.5rem;
-    margin-left: auto; /* Push the h1 to the center */
-    margin-right: auto; /* This is key to ensure the title centers itself */
+    margin-left: auto; 
+    margin-right: auto; 
 }
 
 h2 {
