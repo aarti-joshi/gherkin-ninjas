@@ -115,3 +115,67 @@ function updateProgress(points, nextGoal) {
 }
 
 updateProgress(30, 100);
+
+document.addEventListener("DOMContentLoaded", async function() {
+  try {
+      // Async function to fetch events from the API
+      const response = await fetch('https://community-async.onrender.com/CommunityAsync', {
+          method: 'GET',
+          headers: {
+              'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+      });
+      
+      // Convert the fetched response to JSON
+      const data = await response.json();
+      
+      // Extract only the first 3 events
+      const upcomingEvents = data.slice(0, 3);
+      
+      // Get the container where we'll append our events
+      const eventsContainer = document.getElementById('events-list');
+      
+      upcomingEvents.forEach(event => {
+          // Create an individual event card div
+          const eventCard = document.createElement('div');
+          eventCard.classList.add('event-card');
+          
+          // Format the event's date
+          const eventDate = new Date(event.event_date);
+          const formattedDate = `${eventDate.getDate()}-${eventDate.getMonth() + 1}-${eventDate.getFullYear()}`;
+          
+          // Populate the event card with details about the event
+          eventCard.innerHTML = `
+              <h3>${event.event_name}</h3>
+              <p><strong>Date:</strong> ${formattedDate}</p>
+              <p><strong>Category:</strong> ${event.category}</p>
+              <p>${event.description}</p>
+              <p><strong>Points:</strong> ${event.point}</p>
+          `;
+          
+          // Create a "Register" button for the event card
+          const registerBtn = document.createElement('button');
+          registerBtn.textContent = "Register";
+          registerBtn.classList.add('register-btn');
+          
+          // Attach an event listener to the register button
+          // This will show an alert when the user clicks to register for an event
+          // and then disable the button
+          registerBtn.addEventListener('click', function() {
+              alert("You've registered for this event!");
+              registerBtn.disabled = true;
+          });
+          
+          // Attach the register button to the event card
+          eventCard.appendChild(registerBtn);
+          
+          // Attach the event card to our main events container
+          eventsContainer.appendChild(eventCard);
+      });
+  } catch (error) {
+      // Log any errors to the console
+      console.error("Error fetching events:", error);
+  }
+});
+
+
