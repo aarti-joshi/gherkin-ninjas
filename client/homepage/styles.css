@@ -9,8 +9,9 @@ body {
     background-color: #DEE6EC;
 }
 main {
-    flex-grow: 1; /* This pushes the footer to the bottom */
-}
+    flex-grow: 1;
+    width: 50vw;
+    padding-left: 25vw;}
 
 .navbar {
     display: flex;
@@ -161,7 +162,9 @@ a, a:visited {
 .progress-circle {
     position: relative;
     height: 100%;
-    /* transform: scale(2);  */
+    background-color: azure;
+    transform: scale(1.2);
+    border-radius: 1rem;
 }
 
 .progress-bg {
@@ -200,5 +203,6 @@ a, a:visited {
     .progress-container, .upcoming-events {
         max-width: 100%;
         padding: 1rem;
+
     }
 }
