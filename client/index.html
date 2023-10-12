@@ -1,66 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community Async</title>
-  </head>
-  <body>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <!-- Navbar -->
-    <div class="navbar">
-      <div class="logo">
-        <img src="assets/Async-log.png" alt="Community Async logo" />
-      </div>
-      <div class="menu">
-        <a class="login-btn" href="./signup/login.html">Login</a>
-        <a class="signup-btn" href="./signup/register.html">Sign Up</a>
-      </div>
-    </div>
+    <header class="navbar">
+        <div class="logo">
+            <a href="../index.html"><img src="../assets/Async-log.png" alt="Community Async logo" /></a>
+        </div>
+        <nav class="menu">
+            <button class="login-btn" aria-label="Login"><a href="./signup/login.html" style ="font-size: 1rem;">Login</a></button>
+            <button class="signup-btn" aria-label="SignUp"><a href="./signup/register.html" style="font-size: 1rem;">Sign Up</a></button>
+        </nav>
+    </header>
     <!-- Search -->
-    <div class="search-bar">
-      <input type="search" class="search" placeholder=" search events ..." />
-    </div>
-
+    <section class="search-bar">
+        <input type="search" class="search" placeholder=" search events ..." />
+    </section>
     <!-- Content -->
-    <div class="content-container">
-      <div class="content">
-        <img src="assets/volunteering.jpeg" alt="" />
-        <div class="call-to-action">
-          <p class="call-to-action-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
-            incidunt? Excepturi nihil magni dolor veritatis eveniet dolorum hic,
-            nostrum optio expedita iure tempora labore nulla tenetur
-            exercitationem aut eos consequuntur!! Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Nisi consequuntur aut, soluta vel quis
-            dolore doloremque neque! Illo, in maiores dolorum debitis quibusdam
-            assumenda quo temporibus, minus voluptate velit vitae?
-          </p>
-
-          <div class="Westminster-map">
-            <img
-              src="assets/Westminster_Met._B_Ward_Map_1916.svg"
-              alt="Westminster Map"
-            />
+    <main>
+      <div class="content-container">
+        <div class="content">
+          <img src="assets/volunteering.jpeg" alt="" />
+          <div class="call-to-action">
+            <p class="call-to-action-text">
+             <strong>Why Volunteer with Commuity Async?</strong> 
+              <br>
+                &#x1F539; Leave a lasting impact on our local community. <br>
+                &#x1F91D; Build bonds with fellow members and neighbors. <br>
+                &#x1F4DA; Acquire new knowledge and skills. <br>
+                &#x1F4DA; Feel the warmth of giving back and being part of something bigger.
+            </p>
+  
+            <div class="Westminster-map">
+              <img
+                src="assets/Westminster_Met._B_Ward_Map_1916.svg"
+                alt="Westminster Map"
+              />
+            </div>
           </div>
         </div>
+        <div class="login-icons">
+          <img src="assets/signup.png" alt="signup image" />
+          <img src="assets/login.png" alt="login image" />
+        </div>
+        <div class="login">
+          <button class="login-btn" aria-label="Login"><a href="./signup/login.html">Login</a></button>
+          <button class="signup-btn" aria-label="SignUp"><a href="./signup/register.html">Sign Up</a></button>
       </div>
-      <div class="login-icons">
-        <img src="assets/signup.png" alt="signup image" />
-        <img src="assets/login.png" alt="login image" />
       </div>
-      <div class="login">
-        <a class="login-btn" href="./signup/login.html">Login</a>
-        <a class="signup-btn" href="./signup/register.html">Sign Up</a>
-      </div>
-    </div>
+    </main>
 
     <!-- Footer -->
-    <div class="footer">
-      <p back>&copy; 2023 Community Async. All rights reserved.</p> 
-      <p><a href="#">Cookies</a> | <a href="#">About Us </a> |
-      <a href="#">Privacy Policy </a></p>
-    </div>
-    <script src="script.js"></script>
-  </body>
+    <footer class="footer">
+        <p>&copy; 2023 Community Async. All rights reserved.</p>
+        <p><a href="#">Cookies</a> | <a href="#">About Us </a> | <a href="#">Privacy Policy </a></p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+
 </html>
