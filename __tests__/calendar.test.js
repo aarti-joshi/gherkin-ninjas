@@ -29,9 +29,5 @@ describe('fillCalendar', () => {
     const dayBoxes = calendar.querySelectorAll('.day-box');
     expect(dayBoxes).toHaveLength(30); // September 2023 has 30 days
 
-    // You can add more specific assertions based on your test data and expected results
-    // For example, check if the event days are correctly highlighted or if the non-event days are not highlighted.
-
-    // Also, you can simulate user interactions and test event handling, but it might require additional setup.
   });
 });
