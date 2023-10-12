@@ -1,5 +1,5 @@
 // Test file for homepage:
-const { updateProgress } = require('./scripts');
+const { updateProgress } = require('../client/homepage/scripts');
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
