@@ -19,8 +19,14 @@ main {
 }
 
 main img {
-    width: 150px;
+    width: 300px;
     height: auto;
+}
+
+.mainText {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    width: 50%;
 }
 
 
