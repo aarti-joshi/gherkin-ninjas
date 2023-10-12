@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         let response = await fetch(`https://community-async.onrender.com/Volunteers/${volunteer_id}`, {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${localStorage.getItem('token')}` // Assuming the token is stored under the key 'token' in localStorage
+                'Authorization': `Bearer ${localStorage.getItem('token')}` // 'token' in localStorage
             }
         });
         
