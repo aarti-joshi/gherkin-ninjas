@@ -21,27 +21,23 @@ async function register (req, res) {
   }
 };
 
-//login
-async function login (req, res) {
+//login using get by email
+async function login(req, res) {
   try {
       const data = req.body;
 
-      //getByVolunteerId
-      const volunteer = await Volunteer.getByVolunteerId(data["volunteer_id"]);
-
-      // Compare the password
-      const match = await bcrypt.compare(data["password"], volunteer.password);
-
-      if (match) {
+      const volunteer = await Volunteer.getByEmail(data.email_address);
+      const authneticated = await bcrypt.compare(data.password, volunteer["password"]);
+      if(!authneticated) {
+          throw new Error("Password is incorrect");
+      }else {
           const token = await Token.create(volunteer.volunteer_id);
-          res.status(200).json(token);
-      } else {
-          throw new Error("Unable to login");
+          res.status(200).json({authneticated: true, token: token});
       }
   } catch (err) {
-      res.status(400).json({"error": err.message})
+      res.status(403).json({ "error": err.message });
   }
-}
+};
 
 async function index(req, res) {
   try {

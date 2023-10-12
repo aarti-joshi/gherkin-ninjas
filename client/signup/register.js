@@ -15,18 +15,18 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
             email_address: form.get("email_address"),
             contact_number: form.get("contact_number"),
             address: form.get("address"),
-            post_code: form.get("post_code"),
+            postcode: form.get("postcode"),
             password: form.get("password")
         })
     }
 
-    // const response = await fetch("", options);
-    // const data = await response.json();
+    const response = await fetch("http://localhost:3000/Volunteers/register", options);
+    const data = await response.json();
 
-    // if (response.status == 201) {
-    //     alert("Registration successful!");
-    //     window.location.assign("login.html");
-    // } else {
-    //     alert(data.error);
-    // }
+    if (response.status == 201) {
+        alert("Registration successful!");
+        window.location.assign("login.html");
+    } else {
+        alert(data.error);
+    }
 });
