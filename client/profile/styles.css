@@ -1,4 +1,4 @@
-
+/* base structure of pages */
 body {
     display: flex;
     flex-direction: column;
@@ -8,9 +8,16 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #DEE6EC;
 }
+
 main {
-    flex-grow: 1; /* This pushes the footer to the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    flex-grow: 1;
 }
+
 
 .navbar {
     display: flex;
@@ -29,7 +36,7 @@ main {
 .menu button {
     min-width: 50px;
     max-width: 100px;
-    width: 10vw;
+    width: 10vw;  
     height: auto;
     padding: 0.5rem;
     background-color: #14406A;
@@ -61,6 +68,7 @@ main {
     height: 10vh;
 }
 
+/* Dropdown Content */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -80,6 +88,7 @@ main {
     background-color: #E4C3CF;
 }
 
+/* Buttons: hover effect */
 .profile-btn:hover,
 .hamburger-btn:hover,
 .profile-btn:focus,
@@ -87,10 +96,12 @@ main {
     background-color: #E4C3CF;
 }
 
-a, a:visited {
+a,
+a:visited {
     color: inherit;
     text-decoration: #DEE6EC;
 }
+
 
 @media only screen and (max-width: 600px) {
     .navbar {
@@ -105,86 +116,53 @@ a, a:visited {
     .menu button {
         width: 40vw;
     }
+    
 }
 
-/* main  */
-
-.welcome-message {
-    text-align: center;
+/* main */
+.profile-info, .edit-profile {
+    background-color: #fff;
     margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
 }
 
-.main-content {
+h2 {
+    color: #14406A;
+}
+
+form {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px; 
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
 }
 
-.progress-container {
-    flex: 1; 
+label {
+    margin-bottom: 5px;
 }
 
-.upcoming-events {
-    flex: 2; 
-}
-
-.event-card {
-    width: 80%; 
-    margin: 0 auto;
-    background-color: #FFF;
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
     border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
 }
 
-.tick-button {
+input[type="submit"] {
     background-color: #14406A;
     color: #fff;
-    padding: 5px 10px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.progress-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 1.5rem;
-}
-
-.progress-circle {
-    position: relative;
-    height: 100%;
-    transform: scale(2); /* Scaled cirle */
-}
-
-.progress-bg {
-    stroke: #eee; 
-    stroke-width: 4; 
-    fill: none; 
-}
-
-.progress-bar {
-    stroke: blue; 
-    stroke-width: 4; 
-    stroke-linecap: round;
-    fill: none;
-    transform: rotate(-90deg); /* to start load at top */
-    transform-origin: 50% 50%;
-}
-
-.progress-text {
-    font-size: 1em;
-    text-anchor: middle;
-}
-
-@media only screen and (max-width: 600px) {
-    .progress-container, .upcoming-events {
-        max-width: 100%;
-    }
+input[type="submit"]:hover {
+    background-color: #113355;
 }
