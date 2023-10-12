@@ -16,6 +16,19 @@ header {
     text-align: center;
 }
 
+.logo {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    width: 85%; 
+}
+
+.logo img {
+    width: 15vw;
+    height: auto;
+}
+
+
 main {
     max-width: 600px;
     margin: 1rem auto;
@@ -25,9 +38,18 @@ main {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-h1, h2 {
+h1 {
     font-size: 2.5rem;
     color: #ffffff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #14406A;
     text-align: center;
     margin-bottom: 1.5rem;
 }

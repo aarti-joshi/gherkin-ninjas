@@ -16,11 +16,23 @@ body {
     height: 100vh;
 }
 
+.logo {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    width: 67%; 
+}
+
+.logo img {
+    width: 15vw;
+    height: auto;
+}
+
 h1 {
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
-    color: #14406A; 
+    color: #ffffff;; 
     text-align: center;
 }
 
