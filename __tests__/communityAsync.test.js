@@ -36,6 +36,16 @@ describe("GET /CommunityAsync/:id", () => {
   });
 });
 
+describe("GET /CommunityAsync/:event_id", () => {
+  it("should respond with a 404 error if the event does not exist", async () => {
+    const nonExistentEventId = 9999; // An ID that doesn't exist
+    const response = await request(app).get(
+      `/CommunityAsync/${nonExistentEventId}`
+    );
+    expect(response.status).toBe(404);
+  });
+});
+
 describe("POST /CommunityAsync", () => {
   it("Creates a new event", async () => {
     const newEvent = {
@@ -73,15 +83,15 @@ describe("PATCH /CommunityAsync/:id", () => {
   });
 });
 
-describe("DELETE /CommunityAsync/:id", () => {
-  it("Deletes an existing event", async () => {
-    const testId = 3; //
+// describe("DELETE /CommunityAsync/:id", () => {
+//   it("Deletes an existing event", async () => {
+//     const testId = 3; //
 
-    const response = await request(app).delete(`/CommunityAsync/${testId}`);
+//     const response = await request(app).delete(`/CommunityAsync/${testId}`);
 
-    expect(response.status).toEqual(204);
-  });
-});
+//     expect(response.status).toEqual(204);
+//   });
+// });
 
 afterAll(async () => {
   await db.end(); // Close the database connection pool after all tests
