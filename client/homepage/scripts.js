@@ -114,7 +114,7 @@ function updateProgress(points, nextGoal) {
   progressText.textContent = `${points} / ${nextGoal}`;
 }
 
-updateProgress(30, 100);
+updateProgress(850, 5000);
 
 document.addEventListener("DOMContentLoaded", async function() {
   try {

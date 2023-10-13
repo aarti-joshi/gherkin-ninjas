@@ -9,8 +9,9 @@ body {
     background-color: #DEE6EC;
 }
 main {
-    flex-grow: 1; /* This pushes the footer to the bottom */
-}
+    flex-grow: 1;
+    width: 50vw;
+    padding-left: 25vw;}
 
 .navbar {
     display: flex;
@@ -119,7 +120,7 @@ a, a:visited {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px; 
+    gap: 1rem; 
 }
 
 .progress-container {
@@ -161,17 +162,19 @@ a, a:visited {
 .progress-circle {
     position: relative;
     height: 100%;
-    transform: scale(2); /* Scaled cirle */
+    background-color: azure;
+    transform: scale(1.2);
+    border-radius: 1rem;
 }
 
 .progress-bg {
-    stroke: #eee; 
+    stroke: #caaecd; 
     stroke-width: 4; 
     fill: none; 
 }
 
 .progress-bar {
-    stroke: blue; 
+    stroke: rgba(227, 2, 126, 0.692); 
     stroke-width: 4; 
     stroke-linecap: round;
     fill: none;
@@ -184,8 +187,22 @@ a, a:visited {
     text-anchor: middle;
 }
 
+.progress-circle text {
+    font-size: 1em;
+    text-anchor: middle;
+    fill: #14406A;
+    width: 100%; 
+    max-width: 200px; /* This ensures the SVG doesn't grow too large on big screens */
+    height: auto;
+    display: block; /* Removes any vertical whitespace */
+    margin: 0 auto; /* Centers the SVG horizontally */
+
+}
+
 @media only screen and (max-width: 600px) {
     .progress-container, .upcoming-events {
         max-width: 100%;
+        padding: 1rem;
+
     }
 }
