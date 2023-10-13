@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async function() {
-    const volunteer_id = 2;  // hardcoded id value
+    const volunteer_id = 8;  // hardcoded id value
 
     try {
         let response = await fetch(`https://community-async.onrender.com/Volunteers/${volunteer_id}`, {
