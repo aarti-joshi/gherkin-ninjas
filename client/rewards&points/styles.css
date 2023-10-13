@@ -124,46 +124,77 @@ a:visited {
 main {
     flex-direction: row;
     justify-content: space-around;
-    padding: 20px 10%;
+    /* padding: 20px 10%; */
     flex-grow: 1;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+.content-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
 }
 .progress-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    /* width: 70%;
+    height: 70%; */
     padding: 1.5rem;
 }
 
 .progress-circle {
     position: relative;
     height: 100%;
-    transform: scale(2); /* Scaled cirle */
-}
-
-.progress-bg {
-    stroke: #eee; 
-    stroke-width: 4; 
-    fill: none; 
-}
-
-.progress-bar {
-    stroke: blue; 
-    stroke-width: 4; 
+    background-color: azure;
+    box-shadow: 0.5rem 0.5rem;
+    transform: scale(1.2);
+    border-radius: 1rem;
+  }
+  
+  .progress-bg {
+    stroke: #caaecd;
+    stroke-width: 4;
+    fill: none;
+  }
+  
+  .progress-bar {
+    stroke: rgba(227, 2, 126, 0.692);
+    stroke-width: 4;
     stroke-linecap: round;
     fill: none;
     transform: rotate(-90deg); /* to start load at top */
     transform-origin: 50% 50%;
-}
+  }
 
 .progress-text {
     font-size: 1em;
     text-anchor: middle;
 }
 
+.progress-circle text {
+    font-size: 1em;
+    text-anchor: middle;
+    fill: #14406A;
+    width: 100%; 
+    max-width: 200px; /* This ensures the SVG doesn't grow too large on big screens */
+    height: auto;
+    display: block; /* Removes any vertical whitespace */
+    margin: 0 auto; /* Centers the SVG horizontally */
 
+}
+
+@media only screen and (max-width: 600px) {
+    .progress-container{
+        max-width: 100%;
+        padding: 1rem;
+
+    }
+}
+/* 
 .progress-section,
 .description-section {
     width: 50%;
-}
+   
+} */
