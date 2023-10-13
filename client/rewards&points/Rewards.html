@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="../signup/logout.js"defer></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../index.html"><img src="../assets/Async-log.png" alt="Community Async logo" /></a>
+        </div>
+        <nav class="menu">
+            <button class="profile-btn" aria-label="Profile"><a href="../profile/profile.html">&#128100;</a></button>
+            <button class="hamburger-btn" aria-label="Menu" onclick="toggleDropdown()">&#8801;</button>
+            <div class="dropdown-content" id="dropdown">
+                <a href="../eventCalender/eventCalender.html">&#128197; Events & Calendar</a>
+                <a href="../history/history.html">&#x23F3; History</a>
+                <a href="../rewards&points/Rewards.html">&#x1F3C6; Rewards</a>
+                <a href="#" id="logout">&#x1F6AA; Logout</a>
+            </div>
+        </nav>
+    </header>
+    <!-- Search -->
+    <section class="search-bar">
+        <input type="search" class="search" placeholder=" search events ..." />
+    </section>
+    <!-- Content -->
+    <main>
+        <div class="content-container">
+            <div class="progress-section">
+                <!-- SVG content here -->
+                <div class="progress-container">
+                    <svg class="progress-circle" width="200" height="200">
+                        <circle class="progress-bg" cx="100" cy="100" r="80"></circle>
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <text x="100" y="130" text-anchor="middle" font-size="1em">
+                            Points
+                          </text>
+              
+                        <text class="progress-text" x="100" y="105"></text>
+                    </svg>
+                </div>
+            </div>
+            <div class="description-section">
+                <h2>Get rewards for Volunteering</h2>
+                <p><strong>1000 points:</strong> Earn a pin &#128044; &#128027; &#x1F42D;</p>
+                <p><strong>2000 points:</strong> Get a badge &#9733;</p>
+                <p><strong>5000 points:</strong> Win an Amazon gift card &#128182;</p>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2023 Community Async. All rights reserved.</p>
+        <p><a href="#">Cookies</a> | <a href="../about/aboutUs.html">About Us </a> | <a href="#">Privacy Policy </a></p>
+    </footer>
+    <script src="../homepage/scripts.js"></script>
+    <script src="scripts.js"></script>
+    <script src="../dropdowntoggle.js"></script>
+</body>
+
+</html>

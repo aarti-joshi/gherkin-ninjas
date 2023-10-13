@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  margin: 10px 0;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #dee6ec;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem; /* Increase font size */
+  padding: 20px; /* Add padding for spacing */
+  background-color: #14406a; /* Match the color of the navbar */
+  color: white; /* Set the text color to white */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  margin: 10px 0;
+  padding: 10px; /* Add padding for spacing */
+  background-color: white; /* Set background color to white */
+  box-shadow: 0px 0px 10px 0px #799fc0; /* Add a subtle box-shadow */
+  border-radius: 10px;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+/* Styling for checkboxes when checked */
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through; /* Add line-through effect */
+  color: #777; /* Dim text color when checked */
+}

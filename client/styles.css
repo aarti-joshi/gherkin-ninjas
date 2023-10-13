@@ -1,58 +1,119 @@
-* {
-  padding: 0;
+/* base structure of pages */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
+  padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
+  background-color: #f0f0f0;
 }
 
-/* Navbar styles */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  flex-grow: 1;
+}
+
 .navbar {
   display: flex;
-  justify-content: center;
-  gap: 20vw;
-  background-color: #034191;
-  padding: 1rem;
-  height: 20vh;
-}
-
-.menu {
-  display: flex;
-  align-content: space-between;
-  justify-content: space-between;
-  height: max-content;
-  gap: 10px;
-}
-
-.login-btn,
-.signup-btn {
-  background-color: #584c5b;
+  justify-content: right;
+  padding: 1rem 15%;
+  height: 8vh;
+  background-color: #14406a;
   color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
+  gap: 50%;
 }
 
-/* search-bar */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.logo img {
+  width: 15vw;
+  height: auto;
+}
+
+
+.menu button {
+  min-width: 50px;
+  max-width: 100px;
+  width: 10vw;
+  height: auto;
+  padding: 0.5rem;
+  background-color: #14406a;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
 .search-bar {
   display: flex;
   justify-content: center;
-  background-color: black;
+  background-color: #14406a;
   padding: 5px;
 }
-
 .search {
-  width: 70vw;
+  width: 60vw;
   border-radius: 8rem;
-  padding: 5px;
+  padding: 0.5rem;
+
+  font-size: 30px;
+  padding-bottom: 10px;
 }
 
-.container {
+.footer {
+  background-color: #14406a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  height: 10vh;
+}
+
+/* Buttons: hover effect */
+.login-btn:hover,
+.signup-btn:hover,
+.login-btn:focus,
+.signup-btn:focus {
+  background-color: #e4c3cf;
+}
+
+a,
+a:visited {
+  color: inherit;
+  text-decoration: #dee6ec;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo img {
+    width: 50vw;
+  }
+
+  .menu button {
+    width: 40vw;
+  }
+}
+/* main */
+.content-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-/* Content */
+
 .content {
   display: flex;
   flex-direction: column;
@@ -61,8 +122,8 @@
 }
 
 .content img {
-  width: 70%;
-  height: auto;
+  height: 50vh;
+  width: auto;
   margin-bottom: 0.5em;
 }
 
@@ -70,10 +131,10 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #f6f6f6;
+  align-items: center;
+  background-color: #e4c3cf;
   padding: 0.5em;
   border-style: double;
-  /* border-radius: 0.5em; */
   width: 70%;
   height: auto;
   font-size: 0.5rem;
@@ -81,11 +142,12 @@
 }
 .call-to-action p {
   font-size: 2em;
-  /* word-wrap: break-word; */
+  background-color: #e4c3cf;
 }
 .Westminster-map {
   justify-items: center;
-  border-style: dotted;
+  border-style:solid
+  background-color: #bde0fe;
 }
 
 .Westminster-map image {
@@ -112,15 +174,5 @@
   display: flex;
   justify-content: center;
   gap: 1em;
-}
-
-/* Footer*/
-.footer {
-  position: static;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgb(0, 0, 0);
-  color: white;
-  text-align: center;
+  padding-bottom: 5vh;
 }

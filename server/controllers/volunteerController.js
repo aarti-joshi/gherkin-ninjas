@@ -1,4 +1,43 @@
+const bcrypt = require("bcrypt");
+
+const Token = require("../models/token");
 const Volunteer = require("../models/volunteerModel");
+
+async function register (req, res) {
+  try {
+      const data = req.body;
+
+      // Generate a salt with a specific cost
+      const salt = await bcrypt.genSalt(parseInt(process.env.BCRYPT_SALT_ROUNDS));
+
+      // Hash the password
+      data["password"] = await bcrypt.hash(data["password"], salt);
+
+      const result = await Volunteer.create(data);
+
+      res.status(201).send(result);
+  } catch (err) {
+      res.status(400).json({"error": err.message})
+  }
+};
+
+//login using get by email
+async function login(req, res) {
+  try {
+      const data = req.body;
+
+      const volunteer = await Volunteer.getByEmail(data.email_address);
+      const authneticated = await bcrypt.compare(data.password, volunteer["password"]);
+      if(!authneticated) {
+          throw new Error("Password is incorrect");
+      }else {
+          const token = await Token.create(volunteer.volunteer_id);
+          res.status(200).json({authneticated: true, token: token});
+      }
+  } catch (err) {
+      res.status(403).json({ "error": err.message });
+  }
+};
 
 async function index(req, res) {
   try {
@@ -58,4 +97,4 @@ async function destroy(req, res) {
   }
 }
 
-module.exports = { index, show, create, update, destroy };
+module.exports = { index, show, create, update, destroy, register, login };

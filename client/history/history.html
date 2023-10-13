@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="../signup/logout.js"defer></script>
+</head>
+
+
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="../homepage/homepage.html"
+          ><img src="../assets/Async-log.png" alt="Community Async logo"
+        /></a>
+      </div>
+      <nav class="menu">
+        <button class="profile-btn" aria-label="Profile">
+          <a href="../profile/profile.html">&#128100;</a>
+        </button>
+        <button
+          class="hamburger-btn"
+          aria-label="Menu"
+          onclick="toggleDropdown()"
+        >
+          &#8801;
+        </button>
+        <div class="dropdown-content" id="dropdown">
+          <a href="../eventCalender/eventCalender.html"
+            >&#128197; Events & Calendar</a
+          >
+          <a href="./history.html">&#x23F3; History</a>
+          <a href="../rewards&points/Rewards.html">&#x1F3C6; Rewards</a>
+          <a href="#" id="logout">&#x1F6AA; Logout</a>
+
+        </div>
+<!-- 
+        <nav class="menu">
+            <button class="profile-btn" aria-label="Profile"><a href="../profile/profile.html">&#128100;</a></button>
+            <button class="hamburger-btn" aria-label="Menu" onclick="toggleDropdown()">&#8801;</button>
+            <div class="dropdown-content" id="dropdown">
+                <a href="../eventCalender/eventCalender.html">&#128197; Events & Calendar</a>
+                <a href="./history.html">&#x23F3; History</a>
+                <a href="../rewards&po                <a href="#" id="logout">&#x1F6AA; Logout</a>
+ints/Rewards.html">&#x1F3C6; Rewards</a>
+                <a href="#" id="logout">&#x1F6AA; Logout</a>
+            </div>
+        </nav> -->
+
+    </header>
+    <!-- Search -->
+    <section class="search-bar">
+      <input type="search" class="search" placeholder=" search events ..." />
+    </section>
+
+    <!-- Content -->
+    <main>
+      <section class="events-section">
+        <h2 class="cards">Attending</h2>
+        <div id="attending-events" class="event-cards">
+          <!-- js adds cards -->
+        </div>
+      </section>
+      <section class="events-section">
+        <h2 class="cards">Attended</h2>
+        <div id="attended-events" class="event-cards">
+          <!-- js adds cards -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2023 Community Async. All rights reserved.</p>
+      <p>
+        <a href="#">Cookies</a> |
+        <a href="../about/aboutUs.html">About Us </a> |
+        <a href="#">Privacy Policy </a>
+      </p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script src="../dropdowntoggle.js"></script>
+  </body>
+</html>
