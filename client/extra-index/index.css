@@ -1,76 +1,155 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Set a background color */
 body {
-    background-color: #f2f2f2;
+  background-color: #f0f0f0;
 }
 
 /* Center the content */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 /* Style the heading */
 h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: center;
-    color: #333;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
 }
 
 /* Style the paragraph */
 p {
-    font-size: 1.5rem;
-    text-align: center;
-    color: #666;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #666;
 }
 
 /* Style the header */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
 }
 
 /* Style the main section */
 main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 /* Style the section headings */
 section h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #333;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
 /* Style the section paragraphs */
 section p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #666;
 }
 
 /* Style the buttons */
 button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    margin-right: 1rem;
-    cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 button:hover {
-    background-color: #666;
+  background-color: #666;
+}
+
+header {
+  background-color: #14406a; /* Same as the first page */
+  color: white; /* Same as the first page */
+  text-align: center;
+  padding: 1rem;
+}
+header h1 {
+  font-size: 3rem; /* Same as the first page */
+  font-weight: bold; /* Same as the first page */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Style the main section */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section h2 {
+  font-size: 2rem; /* Same as the first page */
+  font-weight: bold; /* Same as the first page */
+  margin-bottom: 1rem; /* Same as the first page */
+  color: #14406a; /* Matching color from the first page */
+}
+
+/* Style the section paragraphs */
+section p {
+  font-size: 1.75rem; /* Modified size for better readability */
+  line-height: 1.8; /* Modified line-height for better readability */
+  margin-bottom: 1rem;
+  color: #dee6ec; /* Matching color from the first page */
+  text-align: center;
+  box-shadow: 0px 0px 10px 0px #799fc0; /* Matching box-shadow from the first page */
+  border-radius: 10px; /* Matching border-radius from the first page */
+  background-color: #14406a; /* Matching background color from the first page */
+}
+
+/* Style the buttons */
+button {
+  background-color: #14406a; /* Matching color from the first page */
+  color: white; /* Same as the first page */
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #fff8c9; /* Same hover effect as the first page */
+  color: black; /* Modified color for better visibility */
+}
+
+a,
+a:visited {
+  color: #fff8c9; /* Matching color from the first page */
+  text-decoration: none; /* Modified text decoration for better visibility */
+}
+
+h1 {
+  color: white;
+}
+
+.heading {
+  color: black;
+}
+
+.box {
+  margin: 30px;
+  padding: 20px;
 }
