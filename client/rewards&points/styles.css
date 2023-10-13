@@ -218,7 +218,7 @@ header {
   color: white;
   border-radius: 10px;
 }
-#14406a.footer {
+.footer {
   background-color: #14406a; /* Change to match the first page */
   color: white; /* Change to match the first page */
   text-align: center;
