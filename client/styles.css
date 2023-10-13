@@ -28,10 +28,18 @@ main {
   gap: 50%;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+
 .logo img {
   width: 15vw;
   height: auto;
 }
+
 
 .menu button {
   min-width: 50px;
