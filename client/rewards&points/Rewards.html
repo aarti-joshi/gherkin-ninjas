@@ -9,26 +9,43 @@
     <script src="../signup/logout.js"defer></script>
 </head>
 
-<body>
+
+  <body>
     <!-- Navbar -->
     <header class="navbar">
-        <div class="logo">
-            <a href="../index.html"><img src="../assets/Async-log.png" alt="Community Async logo" /></a>
+      <div class="logo">
+        <a href="../index.html"
+          ><img src="../assets/Async-log.png" alt="Community Async logo"
+        /></a>
+      </div>
+      <nav class="menu">
+        <button class="profile-btn" aria-label="Profile">
+          <a href="../profile/profile.html">&#128100;</a>
+        </button>
+        <button
+          class="hamburger-btn"
+          aria-label="Menu"
+          onclick="toggleDropdown()"
+        >
+          &#8801;
+        </button>
+        <div class="dropdown-content" id="dropdown">
+          <a href="../eventCalender/eventCalender.html"
+            >&#128197; Events & Calendar</a
+          >
+          <a href="../history/history.html">&#x23F3; History</a>
+          <a href="../rewards&points/Rewards.html">&#x1F3C6; Rewards</a>
+          <a href="#" id="logout">&#x1F6AA; Logout</a>
         </div>
-        <nav class="menu">
-            <button class="profile-btn" aria-label="Profile"><a href="../profile/profile.html">&#128100;</a></button>
-            <button class="hamburger-btn" aria-label="Menu" onclick="toggleDropdown()">&#8801;</button>
-            <div class="dropdown-content" id="dropdown">
-                <a href="../eventCalender/eventCalender.html">&#128197; Events & Calendar</a>
-                <a href="../history/history.html">&#x23F3; History</a>
-                <a href="../rewards&points/Rewards.html">&#x1F3C6; Rewards</a>
-                <a href="#" id="logout">&#x1F6AA; Logout</a>
-            </div>
-        </nav>
+      </nav>
     </header>
     <!-- Search -->
     <section class="search-bar">
-        <input type="search" class="search" placeholder=" search events ..." />
+      <input
+        type="search"
+        class="search"
+        placeholder=" Search for an event ..."
+      />
     </section>
     <!-- Content -->
     <main>
@@ -55,12 +72,15 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2023 Community Async. All rights reserved.</p>
-        <p><a href="#">Cookies</a> | <a href="../about/aboutUs.html">About Us </a> | <a href="#">Privacy Policy </a></p>
+      <p>&copy; 2023 Community Async. All rights reserved.</p>
+      <p>
+        <a href="#">Cookies</a> |
+        <a href="../about/aboutUs.html">About Us </a> |
+        <a href="#">Privacy Policy </a>
+      </p>
     </footer>
     <script src="../homepage/scripts.js"></script>
     <script src="scripts.js"></script>
     <script src="../dropdowntoggle.js"></script>
-</body>
-
+  </body>
 </html>
